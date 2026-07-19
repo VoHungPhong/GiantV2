@@ -1,0 +1,571 @@
+.profile-container{
+
+    display:flex;
+
+    min-height:100vh;
+
+    background:#f5f7fb;
+
+}
+
+.sidebar{
+
+    width:300px;
+
+    background:#1A1A8C;
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px;
+
+}
+
+.profile-logo{
+
+    width:170px;
+
+    margin-bottom:20px;
+
+}
+
+.avatar{
+
+    width:110px;
+
+    height:110px;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#1A1A8C;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:50px;
+
+    margin:auto;
+
+}
+
+.sidebar h2{
+
+    margin-top:20px;
+
+}
+
+.sidebar p{
+
+    opacity:.8;
+
+    margin-bottom:30px;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.sidebar li{
+
+    padding:15px;
+
+    cursor:pointer;
+
+    border-radius:8px;
+
+    margin-bottom:8px;
+
+    transition:.3s;
+
+}
+
+.sidebar li:hover{
+
+    background:rgba(255,255,255,.15);
+
+}
+
+.active{
+
+    background:white;
+
+    color:#1A1A8C;
+
+    font-weight:bold;
+
+}
+
+.content{
+
+    flex:1;
+
+    padding:50px;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:35px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    width:500px;
+
+}
+
+.card label{
+
+    display:block;
+
+    margin-top:15px;
+
+    font-weight:bold;
+
+}
+
+.card input{
+
+    width:100%;
+
+    height:45px;
+
+    margin-top:8px;
+
+    margin-bottom:15px;
+
+    padding:10px;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+}
+
+.card button{
+
+    width:100%;
+
+    height:48px;
+
+    background:#1A1A8C;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+.card button:hover{
+
+    background:#00006d;
+
+}
+/*=========================
+      BACK HOME
+==========================*/
+
+.back-home{
+
+    margin-bottom:25px;
+
+}
+
+.back-home a{
+
+    text-decoration:none;
+
+    color:#1A1A8C;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.back-home a:hover{
+
+    color:#1260cc;
+
+    padding-left:8px;
+
+}
+/* =================================
+   PROFILE SECTIONS
+================================= */
+
+.profile-section{
+    display:none;
+}
+
+.profile-section.active-section{
+    display:block;
+    animation:profileFadeIn .3s ease;
+}
+
+@keyframes profileFadeIn{
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =================================
+   FAVORITE PRODUCTS
+================================= */
+
+.section-title-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.section-title-row h1{
+    margin:0;
+}
+
+.continue-shopping{
+    padding:10px 16px;
+    border-radius:8px;
+    background:#1a1a8c;
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    white-space:nowrap;
+    transition:.25s;
+}
+
+.continue-shopping:hover{
+    background:#00006d;
+    transform:translateY(-2px);
+}
+
+.favorite-list{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:22px;
+}
+
+.favorite-profile-card{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    background:#fff;
+    padding:18px;
+    border-radius:16px;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.favorite-profile-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 14px 30px rgba(0,0,0,.13);
+}
+
+.favorite-profile-card img{
+    width:100%;
+    height:190px;
+    object-fit:contain;
+    margin-bottom:12px;
+}
+
+.favorite-profile-card h3{
+    color:#222;
+    font-size:17px;
+    margin:0 0 8px;
+}
+
+.favorite-profile-card .favorite-type{
+    color:#6b7280;
+    font-size:14px;
+    margin-bottom:8px;
+}
+
+.favorite-profile-card .price{
+    color:#d0021b;
+    font-size:17px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.favorite-actions{
+    display:flex;
+    gap:10px;
+    margin-top:auto;
+}
+
+.favorite-actions a,
+.favorite-actions button{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    font-weight:600;
+    text-align:center;
+    text-decoration:none;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.favorite-actions a{
+    background:#1a1a8c;
+    color:#fff;
+}
+
+.favorite-actions button{
+    background:#fff0f1;
+    color:#d0021b;
+}
+
+.favorite-actions a:hover,
+.favorite-actions button:hover{
+    transform:translateY(-2px);
+}
+
+.favorite-empty{
+    grid-column:1 / -1;
+    background:#fff;
+    border-radius:16px;
+    padding:50px 20px;
+    text-align:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.06);
+}
+
+.favorite-empty .empty-icon{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.favorite-empty h3{
+    color:#1a1a8c;
+    margin-bottom:10px;
+}
+
+.favorite-empty p{
+    color:#666;
+    margin-bottom:20px;
+}
+
+.favorite-empty a{
+    display:inline-block;
+    padding:11px 20px;
+    border-radius:8px;
+    background:#1a1a8c;
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+#favoriteCount{
+    display:inline-flex;
+    min-width:22px;
+    height:22px;
+    padding:0 6px;
+    margin-left:5px;
+    border-radius:999px;
+    align-items:center;
+    justify-content:center;
+    background:#d0021b;
+    color:#fff;
+    font-size:12px;
+}
+
+@media(max-width:1000px){
+    .favorite-list{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media(max-width:650px){
+    .favorite-list{
+        grid-template-columns:1fr;
+    }
+
+    .section-title-row{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+}
+/* =========================
+   ĐƠN HÀNG
+========================= */
+
+.order-list{
+    display:grid;
+    gap:18px;
+}
+
+.order-card{
+    background:#fff;
+    border-radius:14px;
+    padding:22px;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+}
+
+.order-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    padding-bottom:14px;
+    margin-bottom:14px;
+    border-bottom:1px solid #eee;
+}
+
+.order-code{
+    color:#1a1a8c;
+    font-weight:700;
+}
+
+.order-status{
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.order-status.completed{
+    background:#e8f8ed;
+    color:#1a8f3c;
+}
+
+.order-status.shipping{
+    background:#fff6df;
+    color:#b97700;
+}
+
+.order-product{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.order-product img{
+    width:110px;
+    height:90px;
+    object-fit:contain;
+    background:#f5f7fb;
+    border-radius:10px;
+}
+
+.order-product h3{
+    margin:0 0 8px;
+    font-size:17px;
+}
+
+.order-product p{
+    margin:5px 0;
+    color:#666;
+}
+
+.order-price{
+    color:#d0021b !important;
+    font-weight:700;
+}
+
+.order-empty{
+    background:#fff;
+    border-radius:14px;
+    padding:45px 20px;
+    text-align:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.06);
+}
+
+/* =========================
+   BẢO MẬT
+========================= */
+
+.security-card{
+    max-width:520px;
+    background:#fff;
+    border-radius:14px;
+    padding:30px;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+}
+
+.security-card label{
+    display:block;
+    margin:16px 0 8px;
+    font-weight:600;
+    color:#333;
+}
+
+.security-card input{
+    width:100%;
+    height:46px;
+    padding:0 14px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:15px;
+    transition:.25s;
+}
+
+.security-card input:focus{
+    outline:none;
+    border-color:#1a1a8c;
+    box-shadow:0 0 0 3px rgba(26,26,140,.1);
+}
+
+.security-card button{
+    width:100%;
+    height:48px;
+    margin-top:24px;
+    border:none;
+    border-radius:8px;
+    background:#1a1a8c;
+    color:#fff;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.security-card button:hover{
+    background:#00006d;
+    transform:translateY(-2px);
+}
+
+@media(max-width:650px){
+    .order-product{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .order-header{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .security-card{
+        padding:22px;
+    }
+}

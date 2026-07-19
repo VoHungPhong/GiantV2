@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Chính sách bảo hành | GIANT</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="warranty.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-inner">
+
+        <div
+            class="logo-wrap"
+            onclick="window.location.href='index.html'"
+        >
+            <img
+                src="images/logo.jpg"
+                alt="Giant Vietnam"
+                class="logo-img"
+            >
+        </div>
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                TRANG CHỦ
+            </a>
+
+            <div class="dropdown">
+
+                <a
+                    href="javascript:void(0)"
+                    class="drop-btn"
+                >
+                    XE ĐẠP ▾
+                </a>
+
+                <div class="dropdown-content">
+
+                    <a href="index.html?type=Touring">
+                        🏙️ TOURING
+                    </a>
+
+                    <a href="index.html?type=MTB">
+                        ⛰️ MOUNTAIN BIKE
+                    </a>
+
+                    <a href="index.html?type=Road">
+                        🛣️ ROAD BIKE
+                    </a>
+
+                    <a href="index.html?type=Hybrid">
+                        🌳 HYBRID BIKE
+                    </a>
+
+                </div>
+
+            </div>
+
+            <a href="news.html">
+                TIN TỨC
+            </a>
+
+            <a
+                href="warranty.html"
+                class="nav-active"
+            >
+                BẢO HÀNH
+            </a>
+
+            <a href="index.html#footer">
+                LIÊN HỆ
+            </a>
+
+            <a
+                href="javascript:void(0)"
+                id="accountMenu"
+                onclick="openAccount()"
+            >
+                👤 TÀI KHOẢN
+            </a>
+
+        </nav>
+
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="warranty-hero">
+
+    <div class="warranty-hero-overlay"></div>
+
+    <div class="warranty-hero-content">
+
+        <span class="warranty-tag">
+            GIANT WARRANTY
+        </span>
+
+        <h1>
+            CHÍNH SÁCH<br>
+            BẢO HÀNH GIANT
+        </h1>
+
+        <p>
+            Cam kết chất lượng, bảo vệ quyền lợi khách hàng
+            và đồng hành cùng bạn trên mọi hành trình.
+        </p>
+
+        <a href="#warrantyPeriod" class="hero-button">
+            XEM THỜI HẠN BẢO HÀNH
+        </a>
+
+    </div>
+
+</section>
+
+<main>
+
+    <!-- GIỚI THIỆU -->
+    <section class="warranty-intro reveal">
+
+        <span class="section-label">
+            CHÍNH SÁCH CHÍNH HÃNG
+        </span>
+
+        <h2>
+            AN TÂM TRÊN MỌI HÀNH TRÌNH
+        </h2>
+
+        <p>
+            Chính sách bảo hành được áp dụng đối với những
+            lỗi kỹ thuật hoặc lỗi phát sinh từ nhà sản xuất,
+            khi sản phẩm đáp ứng đầy đủ các điều kiện bảo hành.
+        </p>
+
+    </section>
+
+    <!-- ĐIỀU KIỆN -->
+    <section class="condition-section">
+
+        <div class="section-heading reveal">
+
+            <span>ĐIỀU KIỆN ÁP DỤNG</span>
+
+            <h2>ĐIỀU KIỆN ĐƯỢC BẢO HÀNH</h2>
+
+            <p>
+                Sản phẩm cần đáp ứng đầy đủ các điều kiện
+                trước khi được tiếp nhận và kiểm tra bảo hành.
+            </p>
+
+        </div>
+
+        <div class="condition-grid">
+
+            <article class="condition-card reveal">
+
+                <div class="condition-icon">✓</div>
+
+                <h3>MUA TẠI HỆ THỐNG CHÍNH HÃNG</h3>
+
+                <p>
+                    Xe được mua tại Giant International hoặc
+                    đại lý phân phối chính thức.
+                </p>
+
+            </article>
+
+            <article class="condition-card reveal">
+
+                <div class="condition-icon">✓</div>
+
+                <h3>CÒN THỜI HẠN BẢO HÀNH</h3>
+
+                <p>
+                    Sản phẩm vẫn nằm trong thời gian bảo hành
+                    được quy định cho từng hạng mục.
+                </p>
+
+            </article>
+
+            <article class="condition-card reveal">
+
+                <div class="condition-icon">✓</div>
+
+                <h3>THÔNG TIN HỢP LỆ</h3>
+
+                <p>
+                    Tem, phiếu hoặc thông tin bảo hành phải đầy đủ,
+                    rõ ràng và không bị tẩy xóa.
+                </p>
+
+            </article>
+
+            <article class="condition-card reveal">
+
+                <div class="condition-icon">✓</div>
+
+                <h3>LỖI TỪ NHÀ SẢN XUẤT</h3>
+
+                <p>
+                    Hư hỏng phát sinh do lỗi kỹ thuật,
+                    linh kiện hoặc quá trình sản xuất.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- THỜI HẠN -->
+    <section
+        class="period-section"
+        id="warrantyPeriod"
+    >
+
+        <div class="section-heading reveal">
+
+            <span>THỜI HẠN BẢO HÀNH</span>
+
+            <h2>THỜI GIAN ÁP DỤNG THEO HẠNG MỤC</h2>
+
+            <p>
+                Mỗi bộ phận có thời gian bảo hành khác nhau
+                tùy theo cấu tạo và đặc điểm sử dụng.
+            </p>
+
+        </div>
+
+        <div class="period-grid">
+
+            <article class="period-card featured reveal">
+
+                <div class="period-icon">🛡️</div>
+
+                <h3>KHUNG SƯỜN</h3>
+
+                <div class="period-number">
+                    72
+                    <span>THÁNG</span>
+                </div>
+
+                <p>
+                    Áp dụng cho lỗi kỹ thuật của khung sườn
+                    phát sinh từ quá trình sản xuất.
+                </p>
+
+            </article>
+
+            <article class="period-card reveal">
+
+                <div class="period-icon">⚙️</div>
+
+                <h3>PHUỘC GIẢM XÓC</h3>
+
+                <div class="period-number">
+                    6
+                    <span>THÁNG</span>
+                </div>
+
+                <p>
+                    Áp dụng cho các dòng có phuộc giảm xóc
+                    như MTB hoặc Roam.
+                </p>
+
+            </article>
+
+            <article class="period-card featured reveal">
+
+                <div class="period-icon">🚲</div>
+
+                <h3>PHUỘC CỨNG</h3>
+
+                <div class="period-number">
+                    72
+                    <span>THÁNG</span>
+                </div>
+
+                <p>
+                    Áp dụng cho các dòng không sử dụng
+                    phuộc giảm xóc như Escape, FastRoad,
+                    Propel hoặc TCR.
+                </p>
+
+            </article>
+
+            <article class="period-card reveal">
+
+                <div class="period-icon">🔄</div>
+
+                <h3>BỘ TRUYỀN ĐỘNG</h3>
+
+                <div class="period-number">
+                    12
+                    <span>THÁNG</span>
+                </div>
+
+                <p>
+                    Bao gồm các bộ phận truyền động
+                    theo điều kiện bảo hành của sản phẩm.
+                </p>
+
+            </article>
+
+            <article class="period-card reveal">
+
+                <div class="period-icon">🛑</div>
+
+                <h3>THẮNG DẦU / THẮNG CƠ</h3>
+
+                <div class="period-number">
+                    12
+                    <span>THÁNG</span>
+                </div>
+
+                <p>
+                    Áp dụng cho lỗi kỹ thuật của hệ thống
+                    phanh dầu hoặc phanh cơ.
+                </p>
+
+            </article>
+
+            <article class="period-card reveal">
+
+                <div class="period-icon">🔧</div>
+
+                <h3>GHI ĐÔNG / PÔ TĂNG</h3>
+
+                <div class="period-number">
+                    12
+                    <span>THÁNG</span>
+                </div>
+
+                <p>
+                    Bảo hành đối với lỗi kỹ thuật
+                    không phát sinh từ va chạm.
+                </p>
+
+            </article>
+
+            <article class="period-card reveal">
+
+                <div class="period-icon">💺</div>
+
+                <h3>CỐT YÊN / YÊN</h3>
+
+                <div class="period-number">
+                    12
+                    <span>THÁNG</span>
+                </div>
+
+                <p>
+                    Áp dụng cho lỗi kỹ thuật của cốt yên
+                    và kết cấu yên xe.
+                </p>
+
+            </article>
+
+            <article class="period-card reveal">
+
+                <div class="period-icon">⚙️</div>
+
+                <h3>ĐÙM XE</h3>
+
+                <div class="period-number">
+                    6
+                    <span>THÁNG</span>
+                </div>
+
+                <p>
+                    Áp dụng cho lỗi kỹ thuật của
+                    cụm đùm bánh trước hoặc bánh sau.
+                </p>
+
+            </article>
+
+            <article class="period-card reveal">
+
+                <div class="period-icon">⭕</div>
+
+                <h3>VÀNH XE</h3>
+
+                <div class="period-number">
+                    12
+                    <span>THÁNG</span>
+                </div>
+
+                <p>
+                    Không áp dụng đối với trường hợp
+                    cong, móp hoặc hư hỏng do va chạm.
+                </p>
+
+            </article>
+
+        </div>
+
+        <div class="period-note reveal">
+
+            <span>!</span>
+
+            <p>
+                Thời gian bảo hành được tính từ ngày mua hàng
+                và có thể cần đối chiếu với phiếu, tem hoặc
+                thông tin bảo hành của sản phẩm.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- KHÔNG BẢO HÀNH -->
+    <section class="exclusion-section">
+
+        <div class="section-heading reveal">
+
+            <span>THÔNG TIN QUAN TRỌNG</span>
+
+            <h2>TRƯỜNG HỢP KHÔNG ĐƯỢC BẢO HÀNH</h2>
+
+            <p>
+                Bấm vào từng mục để xem nội dung chi tiết.
+            </p>
+
+        </div>
+
+        <div class="accordion-list">
+
+            <article class="accordion-item reveal">
+
+                <button
+                    type="button"
+                    class="accordion-header"
+                    onclick="toggleAccordion(this)"
+                >
+                    <span class="accordion-title">
+                        <span class="accordion-icon">🔧</span>
+                        Tự ý sửa chữa hoặc thay đổi kết cấu
+                    </span>
+
+                    <span class="accordion-arrow">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <p>
+                        Sản phẩm đã được tự ý tháo lắp, sửa chữa,
+                        thay đổi kết cấu hoặc xử lý tại đơn vị
+                        không được Giant chấp thuận.
+                    </p>
+                </div>
+
+            </article>
+
+            <article class="accordion-item reveal">
+
+                <button
+                    type="button"
+                    class="accordion-header"
+                    onclick="toggleAccordion(this)"
+                >
+                    <span class="accordion-title">
+                        <span class="accordion-icon">💥</span>
+                        Va chạm, tai nạn hoặc sử dụng quá tải
+                    </span>
+
+                    <span class="accordion-arrow">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <p>
+                        Hư hỏng do tai nạn, rơi ngã, va chạm,
+                        tác động bên ngoài hoặc sử dụng vượt quá
+                        mục đích thiết kế của sản phẩm.
+                    </p>
+                </div>
+
+            </article>
+
+            <article class="accordion-item reveal">
+
+                <button
+                    type="button"
+                    class="accordion-header"
+                    onclick="toggleAccordion(this)"
+                >
+                    <span class="accordion-title">
+                        <span class="accordion-icon">🧩</span>
+                        Hao mòn tự nhiên trong quá trình sử dụng
+                    </span>
+
+                    <span class="accordion-arrow">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <p>
+                        Các bộ phận hao mòn tự nhiên như lốp,
+                        ruột, sên, líp, má phanh, dây cáp,
+                        tay nắm hoặc các phụ kiện tiêu hao.
+                    </p>
+                </div>
+
+            </article>
+
+            <article class="accordion-item reveal">
+
+                <button
+                    type="button"
+                    class="accordion-header"
+                    onclick="toggleAccordion(this)"
+                >
+                    <span class="accordion-title">
+                        <span class="accordion-icon">⚠️</span>
+                        Sử dụng hoặc bảo quản không đúng cách
+                    </span>
+
+                    <span class="accordion-arrow">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <p>
+                        Hư hỏng do vệ sinh sai cách, bảo quản
+                        không phù hợp, rỉ sét, lạm dụng sản phẩm
+                        hoặc không tuân thủ hướng dẫn sử dụng.
+                    </p>
+                </div>
+
+            </article>
+
+            <article class="accordion-item reveal">
+
+                <button
+                    type="button"
+                    class="accordion-header"
+                    onclick="toggleAccordion(this)"
+                >
+                    <span class="accordion-title">
+                        <span class="accordion-icon">📄</span>
+                        Hết hạn hoặc thông tin bảo hành không hợp lệ
+                    </span>
+
+                    <span class="accordion-arrow">+</span>
+                </button>
+
+                <div class="accordion-content">
+                    <p>
+                        Sản phẩm đã hết thời hạn bảo hành hoặc
+                        tem, phiếu, thông tin mua hàng bị mất,
+                        sửa đổi hoặc không thể xác minh.
+                    </p>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- QUY TRÌNH -->
+    <section class="process-section">
+
+        <div class="section-heading reveal">
+
+            <span>QUY TRÌNH TIẾP NHẬN</span>
+
+            <h2>5 BƯỚC BẢO HÀNH</h2>
+
+            <p>
+                Quy trình đơn giản, minh bạch và thuận tiện
+                cho khách hàng.
+            </p>
+
+        </div>
+
+        <div class="process-timeline">
+
+            <article class="process-step reveal">
+
+                <div class="step-number">01</div>
+
+                <div class="step-icon">🚲</div>
+
+                <h3>TIẾP NHẬN</h3>
+
+                <p>
+                    Khách hàng mang xe và thông tin bảo hành
+                    đến hệ thống Giant.
+                </p>
+
+            </article>
+
+            <div class="process-line"></div>
+
+            <article class="process-step reveal">
+
+                <div class="step-number">02</div>
+
+                <div class="step-icon">🔍</div>
+
+                <h3>KIỂM TRA</h3>
+
+                <p>
+                    Kỹ thuật viên kiểm tra tình trạng
+                    và nguyên nhân hư hỏng.
+                </p>
+
+            </article>
+
+            <div class="process-line"></div>
+
+            <article class="process-step reveal">
+
+                <div class="step-number">03</div>
+
+                <div class="step-icon">📋</div>
+
+                <h3>XÁC NHẬN</h3>
+
+                <p>
+                    Xác định sản phẩm có đáp ứng đầy đủ
+                    điều kiện bảo hành hay không.
+                </p>
+
+            </article>
+
+            <div class="process-line"></div>
+
+            <article class="process-step reveal">
+
+                <div class="step-number">04</div>
+
+                <div class="step-icon">🛠️</div>
+
+                <h3>XỬ LÝ</h3>
+
+                <p>
+                    Tiến hành sửa chữa hoặc thay thế
+                    linh kiện phù hợp.
+                </p>
+
+            </article>
+
+            <div class="process-line"></div>
+
+            <article class="process-step reveal">
+
+                <div class="step-number">05</div>
+
+                <div class="step-icon">✓</div>
+
+                <h3>HOÀN TẤT</h3>
+
+                <p>
+                    Kiểm tra lại sản phẩm và bàn giao
+                    cho khách hàng.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+
+    <div class="footer-left">
+
+        <p>
+            <b>Công Ty Cổ Phần Vòng Xanh</b>
+        </p>
+
+        <p>
+            GPKD 0313891315 do Sở KH&amp;ĐT TP.HCM
+            cấp ngày 17/06/2025
+        </p>
+
+        <p>
+            100 Hải Thượng Lãn Ông,
+            Phường Chợ Lớn, TP.HCM
+        </p>
+
+        <p>Email: Info@giant.vn</p>
+
+    </div>
+
+    <div class="footer-right">
+
+        <p>
+            Giới thiệu | Tin tức | Bảo hành |
+            Liên hệ | Điều khoản &amp; Bảo mật
+        </p>
+
+        <p>
+            Copyright 2018 © Giant International
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="warranty.js"></script>
+
+</body>
+</html>

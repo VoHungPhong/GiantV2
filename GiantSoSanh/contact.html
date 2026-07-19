@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Liên hệ | GIANT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-inner">
+
+        <div
+            class="logo-wrap"
+            onclick="window.location.href='index.html'"
+        >
+            <img
+                src="images/logo.jpg"
+                alt="Giant Vietnam"
+                class="logo-img"
+            >
+        </div>
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                TRANG CHỦ
+            </a>
+
+            <div class="dropdown">
+
+                <a
+                    href="javascript:void(0)"
+                    class="drop-btn"
+                >
+                    XE ĐẠP ▾
+                </a>
+
+                <div class="dropdown-content">
+
+                    <a href="index.html?type=Touring">
+                        🏙️ TOURING
+                    </a>
+
+                    <a href="index.html?type=MTB">
+                        ⛰️ MOUNTAIN BIKE
+                    </a>
+
+                    <a href="index.html?type=Road">
+                        🛣️ ROAD BIKE
+                    </a>
+
+                    <a href="index.html?type=Hybrid">
+                        🌳 HYBRID BIKE
+                    </a>
+
+                </div>
+
+            </div>
+
+            <a href="news.html">
+                TIN TỨC
+            </a>
+
+            <a href="warranty.html">
+                BẢO HÀNH
+            </a>
+
+            <a
+                href="contact.html"
+                class="nav-active"
+            >
+                LIÊN HỆ
+            </a>
+
+            <a
+                href="javascript:void(0)"
+                id="accountMenu"
+                onclick="openAccount()"
+            >
+                👤 TÀI KHOẢN
+            </a>
+
+        </nav>
+
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="contact-hero">
+
+    <div class="contact-hero-overlay"></div>
+
+    <div class="contact-hero-content">
+
+        <span class="contact-tag">
+            GIANT SUPPORT
+        </span>
+
+        <h1>
+            KẾT NỐI<br>
+            CÙNG GIANT
+        </h1>
+
+        <p>
+            Liên hệ với Giant để được tư vấn lựa chọn xe,
+            hỗ trợ sản phẩm và giải đáp những thông tin cần thiết.
+        </p>
+
+        <a href="#contactMain" class="hero-contact-btn">
+            LIÊN HỆ NGAY
+        </a>
+
+    </div>
+
+</section>
+
+<main id="contactMain">
+
+    <!-- TIÊU ĐỀ -->
+    <section class="contact-intro reveal">
+
+        <span>GIANT INTERNATIONAL VIETNAM</span>
+
+        <h2>CHÚNG TÔI LUÔN SẴN SÀNG HỖ TRỢ</h2>
+
+        <p>
+            Hãy lựa chọn phương thức liên hệ phù hợp hoặc
+            gửi thông tin qua biểu mẫu bên dưới.
+        </p>
+
+    </section>
+
+    <!-- THẺ THÔNG TIN -->
+    <section class="contact-info-section">
+
+        <div class="contact-info-grid">
+
+            <article class="contact-info-card reveal">
+
+                <div class="contact-info-icon">
+                    ☎
+                </div>
+
+                <h3>HOTLINE</h3>
+
+                <a href="tel:18009473">
+                    1800 9473
+                </a>
+
+                <p>
+                    Tư vấn và hỗ trợ khách hàng
+                </p>
+
+            </article>
+
+            <article class="contact-info-card reveal">
+
+                <div class="contact-info-icon">
+                    ✉
+                </div>
+
+                <h3>EMAIL</h3>
+
+                <a href="mailto:info@giant.vn">
+                    info@giant.vn
+                </a>
+
+                <p>
+                    Tiếp nhận thông tin và phản hồi
+                </p>
+
+            </article>
+
+            <article class="contact-info-card reveal">
+
+                <div class="contact-info-icon">
+                    📍
+                </div>
+
+                <h3>ĐỊA CHỈ</h3>
+
+                <p class="contact-address">
+                    100 Hải Thượng Lãn Ông,<br>
+                    Phường Chợ Lớn, TP.HCM
+                </p>
+
+            </article>
+
+            <article class="contact-info-card reveal">
+
+                <div class="contact-info-icon">
+                    ◷
+                </div>
+
+                <h3>GIỜ HỖ TRỢ</h3>
+
+                <strong>
+                    9:00 – 20:00
+                </strong>
+
+                <p>
+                    Hỗ trợ tư vấn và bán hàng
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- FORM + BẢN ĐỒ -->
+    <section class="contact-main-section">
+
+        <div class="contact-layout">
+
+            <!-- FORM -->
+            <div class="contact-form-wrapper reveal">
+
+                <div class="contact-form-heading">
+
+                    <span>GỬI YÊU CẦU</span>
+
+                    <h2>LIÊN HỆ VỚI CHÚNG TÔI</h2>
+
+                    <p>
+                        Vui lòng điền đầy đủ thông tin.
+                        Giant sẽ phản hồi trong thời gian sớm nhất.
+                    </p>
+
+                </div>
+
+                <form
+                    id="contactForm"
+                    class="contact-form"
+                    onsubmit="submitContactForm(event)"
+                >
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="contactName">
+                                Họ và tên
+                            </label>
+
+                            <input
+                                type="text"
+                                id="contactName"
+                                placeholder="Nhập họ và tên"
+                            >
+
+                            <small class="form-error"></small>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="contactPhone">
+                                Số điện thoại
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="contactPhone"
+                                placeholder="Nhập số điện thoại"
+                            >
+
+                            <small class="form-error"></small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="contactEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="contactEmail"
+                            placeholder="Nhập địa chỉ email"
+                        >
+
+                        <small class="form-error"></small>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="contactTopic">
+                            Nội dung cần hỗ trợ
+                        </label>
+
+                        <select id="contactTopic">
+
+                            <option value="">
+                                Chọn nội dung cần hỗ trợ
+                            </option>
+
+                            <option value="Tư vấn chọn xe">
+                                Tư vấn chọn xe
+                            </option>
+
+                            <option value="Thông tin sản phẩm">
+                                Thông tin sản phẩm
+                            </option>
+
+                            <option value="Bảo hành">
+                                Bảo hành
+                            </option>
+
+                            <option value="Đơn hàng">
+                                Đơn hàng
+                            </option>
+
+                            <option value="Khác">
+                                Nội dung khác
+                            </option>
+
+                        </select>
+
+                        <small class="form-error"></small>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="contactMessage">
+                            Tin nhắn
+                        </label>
+
+                        <textarea
+                            id="contactMessage"
+                            rows="6"
+                            placeholder="Nhập nội dung bạn muốn Giant hỗ trợ..."
+                        ></textarea>
+
+                        <small class="form-error"></small>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="contact-submit-btn"
+                    >
+                        <span>GỬI THÔNG TIN</span>
+                        <span class="submit-arrow">→</span>
+                    </button>
+
+                </form>
+
+            </div>
+
+            <!-- BẢN ĐỒ -->
+            <div class="contact-map-wrapper reveal">
+
+                <div class="map-header">
+
+                    <span>VỊ TRÍ</span>
+
+                    <h2>GIANT INTERNATIONAL VIETNAM</h2>
+
+                </div>
+
+                <div class="map-box">
+
+                    <iframe
+                        title="Bản đồ Giant International Vietnam"
+                        src="https://www.google.com/maps?q=100%20H%E1%BA%A3i%20Th%C6%B0%E1%BB%A3ng%20L%C3%A3n%20%C3%94ng%2C%20Ph%C6%B0%E1%BB%9Dng%20Ch%E1%BB%A3%20L%E1%BB%9Bn%2C%20TP%20H%E1%BB%93%20Ch%C3%AD%20Minh&output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+
+                </div>
+
+                <div class="map-address">
+
+                    <div class="map-address-icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <h3>Công Ty Cổ Phần Vòng Xanh</h3>
+
+                        <p>
+                            100 Hải Thượng Lãn Ông,
+                            Phường Chợ Lớn, TP.HCM
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- HỖ TRỢ NHANH -->
+    <section class="quick-support-section">
+
+        <div class="quick-support-content reveal">
+
+            <div>
+
+                <span>HỖ TRỢ NHANH</span>
+
+                <h2>BẠN CẦN TƯ VẤN CHỌN XE?</h2>
+
+                <p>
+                    Gọi ngay để được hỗ trợ lựa chọn mẫu xe
+                    phù hợp với nhu cầu và ngân sách.
+                </p>
+
+            </div>
+
+            <a
+                href="tel:18009063"
+                class="quick-support-button"
+            >
+                ☎ 1800 9063
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- TOAST -->
+<div id="contactToast" class="contact-toast">
+
+    <span class="toast-icon">✓</span>
+
+    <div>
+        <strong>Gửi thông tin thành công</strong>
+
+        <p>
+            Giant đã ghi nhận yêu cầu của bạn.
+        </p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+
+    <div class="footer-left">
+
+        <p>
+            <b>Công Ty Cổ Phần Vòng Xanh</b>
+        </p>
+
+        <p>
+            GPKD 0313891315 do Sở KH&amp;ĐT TP.HCM
+            cấp ngày 17/06/2025
+        </p>
+
+        <p>
+            100 Hải Thượng Lãn Ông,
+            Phường Chợ Lớn, TP.HCM
+        </p>
+
+        <p>
+            Email: Info@giant.vn
+        </p>
+
+    </div>
+
+    <div class="footer-right">
+
+        <p>
+            Giới thiệu | Tin tức | Bảo hành |
+            Liên hệ | Điều khoản &amp; Bảo mật
+        </p>
+
+        <p>
+            Copyright 2018 © Giant International
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="contact.js"></script>
+
+</body>
+</html>

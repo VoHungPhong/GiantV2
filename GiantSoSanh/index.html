@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>GIANT – So sánh xe đạp</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+<header>
+  
+    <div class="header-inner">
+
+        <div class="logo-wrap" onclick="goHome()">
+            <img src="images/logo.jpg"
+                 alt="Giant Vietnam"
+                 class="logo-img">
+        </div>
+
+        <nav class="main-nav">
+
+    <a href="#" onclick="goHome()">
+        🏠 Trang chủ
+    </a>
+
+    <div class="dropdown">
+      <a
+      href="javascript:void(0)"
+      class="drop-btn"
+      onclick="showAllBikes()"
+      >
+    🚲 XE ĐẠP ▾
+</a>
+
+        <div class="dropdown-content">
+
+            <a href="javascript:void(0)" onclick="filterMenu('Touring')">
+                🏙️ Touring
+            </a>
+
+            <a href="javascript:void(0)" onclick="filterMenu('MTB')">
+                ⛰️ Mountain Bike
+            </a>
+
+            <a href="javascript:void(0)" onclick="filterMenu('Road')">
+                🛣️ Road Bike
+            </a>
+
+            <a href="javascript:void(0)" onclick="filterMenu('Hybrid')">
+                🌳 Hybrid Bike
+            </a>
+
+        </div>
+
+    </div>
+
+    <a href="news.html">
+        📰 Tin tức
+    </a>
+
+    <a href="warranty.html">
+        🛡️ Bảo hành
+    </a>
+
+   <a href="contact.html">
+      📞 Liên hệ
+    </a>
+
+    <a href="#" id="accountMenu" onclick="openAccount()">
+    👤 TÀI KHOẢN
+</a>
+
+</nav>
+
+        <div class="header-right">
+
+           <div class="search-box">
+
+    <button class="search-toggle" onclick="toggleSearch()">
+        🔍
+    </button>
+
+    <input
+        id="search"
+        class="search-input"
+        placeholder="Tìm xe..."
+        oninput="render()">
+
+</div>
+
+           <div class="cart-btn" onclick="openCart()">
+            🛒 <span id="cartCount">0</span>
+          </div>
+
+        </div>
+
+    </div>
+</header> <div class="welcome-text">
+    <h2>WELCOME TO GIANT</h2>
+</div>
+
+<div class="page-wrapper" id="pageWrapper">
+    </div>
+<!-- CART MODAL -->
+ 
+<div id="cartModal" class="cart-modal">
+  <div class="cart-box">
+    <h3>🛒 Giỏ hàng</h3>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-total">
+      Tổng tiền: <span id="cartTotal">0₫</span>
+    </div>
+
+    <button class="btn buy" onclick="checkout()">Thanh toán</button>
+    <button class="btn compare" onclick="closeCart()">Đóng</button>
+  </div>
+</div>
+
+
+<div class="container">
+<section class="slideshow">
+  <img id="slideImage" src="images/vibe-1.jpg" alt="Giant banner">
+</section>
+
+<section class="benefits">
+  <h2>LỢI ÍCH KHI ĐẠP XE 🚴‍♂️</h2>
+  <div class="benefits-grid">
+    <div class="benefit-card" style="--order: 1">
+      <div class="icon-wrap">💪</div>
+      <h3>Sức khỏe</h3>
+      <p>Cải thiện tim mạch, tăng cường sự dẻo dai.</p>
+    </div>
+    <div class="benefit-card" style="--order: 2">
+      <div class="icon-wrap">🧠</div>
+      <h3>Giảm stress</h3>
+      <p>Giải tỏa căng thẳng, tinh thần sảng khoái.</p>
+    </div>
+    <div class="benefit-card" style="--order: 3">
+      <div class="icon-wrap">🌱</div>
+      <h3>Môi trường</h3>
+      <p>Giảm khí thải CO2, bảo vệ hành tinh xanh.</p>
+    </div>
+    <div class="benefit-card" style="--order: 4">
+      <div class="icon-wrap">💰</div>
+      <h3>Tiết kiệm</h3>
+      <p>Không tốn xăng dầu, phí bảo trì cực thấp.</p>
+    </div>
+  </div>
+</section>
+<section class="hot-products">
+  <h2>🔥 SẢN PHẨM BÁN CHẠY</h2>
+
+  <div class="hot-slider">
+
+    <button class="hot-nav left" onclick="slideHot(-1)">❮</button>
+
+    <div class="hot-window">
+      <div class="hot-track" id="hotTrack">
+        <!-- JS render -->
+      </div>
+    </div>
+
+    <button class="hot-nav right" onclick="slideHot(1)">❯</button>
+
+  </div>
+  <!-- ===== XE ĐỜI MỚI 2026 ===== -->
+<section class="new-products">
+  <h2>🆕 SẢN PHẨM MỚI</h2>
+
+  <div class="new-slider">
+    <button class="new-nav left" onclick="slideNew(-1)">‹</button>
+
+    <div class="new-window">
+      <div id="newTrack" class="new-track"></div>
+    </div>
+
+    <button class="new-nav right" onclick="slideNew(1)">›</button>
+  </div>
+</section>
+</section>
+
+<div class="compare-box" id="compareBox">
+  <div class="compare-header">So sánh sản phẩm</div>
+  <table id="compareTable"></table>
+</div>
+
+<!-- ADVANCED FILTER -->
+<div class="filter-box">
+  <input id="searchAdvanced" type="text" placeholder="🔍 Tìm kiếm xe đạp..." oninput="applyAdvancedFilter()">
+
+  <select id="filterType" onchange="applyAdvancedFilter()">
+    <option value="">Loại xe</option>
+    <option value="Road">Road</option>
+    <option value="MTB">MTB</option>
+    <option value="Hybrid">Hybrid</option>
+    <option value="Touring">Touring</option>
+  </select>
+
+  <select id="filterPrice" onchange="applyAdvancedFilter()">
+    <option value="">Mức giá</option>
+    <option value="low">Dưới 15 triệu</option>
+    <option value="mid">15 – 30 triệu</option>
+    <option value="high">Trên 30 triệu</option>
+  </select>
+
+  <select id="filterWheel" onchange="applyAdvancedFilter()">
+    <option value="">Kích thước bánh</option>
+    <option value="700C">700C</option>
+    <option value="27.5">27.5 inch</option>
+    <option value="29">29 inch</option>
+  </select>
+
+  <select id="filterYear" onchange="applyAdvancedFilter()">
+    <option value="">Năm sản xuất</option>
+    <option value="2024">2024</option>
+    <option value="2025">2025</option>
+    <option value="2026">2026</option>
+  </select>
+
+  <button class="btn-clear" onclick="clearAllFilters()" title="Xóa tất cả bộ lọc">
+    <span class="icon">🔄</span> Xóa lọc
+  </button>
+</div>
+
+<div class="product-section">
+  <div class="section-header">
+    <!-- QUICK VIEW POPUP -->
+<div id="quickViewBox" class="quick-view">
+  <div class="quick-content" id="quickView"></div>
+</div>
+
+    <h2>🚵 TẤT CẢ SẢN PHẨM</h2>
+  </div>
+  
+  <div class="grid" id="products"></div>
+</div>
+
+</div>
+<div class="floating" onclick="scrollToCompare()"></div>
+<div class="cancel-compare" id="cancelCompare" onclick="cancelCompare()">
+  ❌ Hủy so sánh
+</div>
+
+<footer class="footer" id="footer">
+  <div class="footer-left">
+    <p><b>Công Ty Cổ Phần Vòng Xanh</b></p>
+    <p>GPKD 0313891315 do sở KH&ĐT TP.HCM cấp 17/06/2025</p>
+    <p>100 Hải Thượng Lãn Ông, Phường Chợ Lớn, HCM</p>
+    <p>Email: Info@giant.vn</p>
+  </div>
+
+  <div class="footer-right">
+    <p>Giới thiệu | Tin tức | Bảo hành | Liên hệ | Điều khoản & Bảo mật</p>
+    <p>Copyright 2018 © Giant International</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<div class="contact-widget">
+  <a href="https://facebook.com/yourpage" class="contact-item facebook" title="Facebook" target="_blank">
+    <img src="images/facebookicon.jpg" alt="Facebook">
+  </a>
+
+  <a href="https://zalo.me/yourphone" class="contact-item zalo" title="Zalo" target="_blank">
+    <img src="images/zalo-icon.png" alt="Zalo">
+  </a>
+
+  <div class="contact-item phone-wrapper">
+    <a href="tel:18009473" class="phone-icon">
+      <img src="images/phoneicon.jpg" alt="Phone">
+      <i class="fas fa-phone-alt"></i> 
+    </a>
+    <a href="tel:18009473" class="phone-number">1800 9473</a>
+  </div>
+</div>
+<div id="popup-consult" class="popup-wrapper">
+    <div class="popup-content">
+        <button class="close-btn" onclick="togglePopup(false)">&times;</button>
+        <div class="popup-header">
+            <img src="images/logogiant.jpg" alt="Logo" class="popup-logo">
+            <h3>Giant International Vietnam <br> xin chào!</h3>
+            <p>Nếu mình cần tư vấn chọn xe, nhận báo giá anh/chị vui lòng để lại thông tin nhé!</p>
+        </div>
+        <div class="popup-body">
+            <input type="text" placeholder="Tên của bạn">
+            <input type="text" placeholder="Số điện thoại của bạn*">
+            <input type="text" placeholder="Tin nhắn*">
+            <button class="submit-btn">
+                <i class="fas fa-paper-plane"></i> GỬI TIN NHẮN
+            </button>
+        </div>
+        <div class="popup-footer">Cung cấp bởi Pancake</div>
+    </div>
+</div>
+
+<div id="reopen-btn" class="reopen-popup" onclick="togglePopup(true)">
+    <img src="images/logo-iocn.png" alt="Mở lại" class="reopen-logo">
+</div>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Tài khoản | GIANT</title>
+
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+
+    <div class="profile-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <a href="index.html">
+                <img
+                    src="images/logo.jpg"
+                    class="profile-logo"
+                    alt="Giant Vietnam"
+                >
+            </a>
+
+            <div class="avatar">
+                👤
+            </div>
+
+            <h2 id="userName">Người dùng</h2>
+
+            <p id="userEmail"></p>
+
+            <ul>
+
+                <li
+                    class="active"
+                    onclick="showProfileSection('info', this)"
+                >
+                    👤 Thông tin cá nhân
+                </li>
+
+                <li onclick="showProfileSection('favorites', this)">
+                    ❤️ Yêu thích
+                    <span id="favoriteCount">0</span>
+                </li>
+
+               <li onclick="showProfileSection('orders', this)">
+                    🛒 Đơn hàng
+                </li>
+
+                <li onclick="showProfileSection('security', this)">
+                    ⚙ Bảo mật
+                </li>
+
+                <li onclick="logout()">
+                    🚪 Đăng xuất
+                </li>
+
+            </ul>
+
+        </aside>
+<!-- ĐƠN HÀNG -->
+<section id="ordersSection" class="profile-section">
+
+    <div class="section-title-row">
+        <h1>ĐƠN HÀNG CỦA TÔI</h1>
+    </div>
+
+    <div id="orderList" class="order-list"></div>
+
+</section>
+
+<!-- BẢO MẬT -->
+<section id="securitySection" class="profile-section">
+
+    <div class="section-title-row">
+        <h1>BẢO MẬT TÀI KHOẢN</h1>
+    </div>
+
+    <div class="security-card">
+
+        <label for="oldPassword">
+            Mật khẩu hiện tại
+        </label>
+
+        <input
+            type="password"
+            id="oldPassword"
+            placeholder="Nhập mật khẩu hiện tại"
+        >
+
+        <label for="newPassword">
+            Mật khẩu mới
+        </label>
+
+        <input
+            type="password"
+            id="newPassword"
+            placeholder="Nhập mật khẩu mới"
+        >
+
+        <label for="confirmNewPassword">
+            Nhập lại mật khẩu mới
+        </label>
+
+        <input
+            type="password"
+            id="confirmNewPassword"
+            placeholder="Nhập lại mật khẩu mới"
+        >
+
+        <button
+            type="button"
+            onclick="changePassword()">
+            Cập nhật mật khẩu
+        </button>
+
+    </div>
+
+</section>
+        <!-- NỘI DUNG -->
+        <main class="content">
+
+            <div class="back-home">
+                <a href="index.html">
+                    ← Quay về Trang chủ
+                </a>
+            </div>
+
+            <!-- THÔNG TIN CÁ NHÂN -->
+            <section
+                id="profileInfoSection"
+                class="profile-section active-section"
+            >
+
+                <h1>THÔNG TIN TÀI KHOẢN</h1>
+
+                <div class="card">
+
+                    <label for="profileName">
+                        Họ và tên
+                    </label>
+
+                    <input
+                        id="profileName"
+                        type="text"
+                        placeholder="Nhập họ và tên"
+                    >
+
+                    <label for="profileEmail">
+                        Email
+                    </label>
+
+                    <input
+                        id="profileEmail"
+                        type="email"
+                        readonly
+                    >
+
+                    <button
+                        type="button"
+                        onclick="saveProfile()"
+                    >
+                        Lưu thay đổi
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- SẢN PHẨM YÊU THÍCH -->
+            <section
+                id="favoritesSection"
+                class="profile-section"
+            >
+
+                <div class="section-title-row">
+
+                    <h1>SẢN PHẨM YÊU THÍCH</h1>
+
+                    <a
+                        href="index.html"
+                        class="continue-shopping"
+                    >
+                        Tiếp tục xem xe
+                    </a>
+
+                </div>
+
+                <div
+                    id="favoriteList"
+                    class="favorite-list"
+                ></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="profile.js"></script>
+
+</body>
+
+</html>

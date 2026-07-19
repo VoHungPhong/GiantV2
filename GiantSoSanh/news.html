@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Tin tức | GIANT</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="news.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-inner">
+
+        <div
+            class="logo-wrap"
+            onclick="window.location.href='index.html'"
+        >
+            <img
+                src="images/logo.jpg"
+                alt="Giant Vietnam"
+                class="logo-img"
+            >
+        </div>
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                🏠 TRANG CHỦ
+            </a>
+
+            <div class="dropdown">
+
+                <a
+                    href="javascript:void(0)"
+                    class="drop-btn"
+                >
+                    🚲 XE ĐẠP ▾
+                </a>
+
+                <div class="dropdown-content">
+
+                    <a href="index.html?type=Touring">
+                        🏙️ TOURING
+                    </a>
+
+                    <a href="index.html?type=MTB">
+                        ⛰️ MOUNTAIN BIKE
+                    </a>
+
+                    <a href="index.html?type=Road">
+                        🛣️ ROAD BIKE
+                    </a>
+
+                    <a href="index.html?type=Hybrid">
+                        🌳 HYBRID BIKE
+                    </a>
+
+                </div>
+
+            </div>
+
+            <a href="news.html" class="nav-active">
+                📰 TIN TỨC
+            </a>
+
+            <a href="warranty.html">
+                🛡️ BẢO HÀNH
+            </a>
+
+            <a href="#footer">
+                📞 LIÊN HỆ
+            </a>
+
+            <a
+                href="javascript:void(0)"
+                id="accountMenu"
+                onclick="openAccount()"
+            >
+                👤 TÀI KHOẢN
+            </a>
+
+        </nav>
+
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="news-hero">
+
+    <div class="news-hero-overlay"></div>
+
+    <div class="news-hero-content">
+
+        <span class="news-small-title">
+            GIANT INTERNATIONAL
+        </span>
+
+        <h1>TIN TỨC GIANT</h1>
+
+        <p>
+            Khám phá công nghệ xe đạp, sản phẩm nổi bật
+            và những kinh nghiệm hữu ích dành cho người yêu xe.
+        </p>
+
+        <a href="#newsList" class="news-hero-button">
+            KHÁM PHÁ NGAY
+        </a>
+
+    </div>
+
+</section>
+
+<main class="news-container" id="newsList">
+
+    <div class="news-heading">
+
+        <span>TIN MỚI NHẤT</span>
+
+        <h2>CÂU CHUYỆN VÀ CẢM HỨNG ĐẠP XE</h2>
+
+        <p>
+            Cập nhật kiến thức và những xu hướng đáng chú ý
+            trong thế giới xe đạp Giant.
+        </p>
+
+    </div>
+
+    <!-- BÀI NỔI BẬT -->
+    <article class="featured-news">
+
+        <div class="featured-image">
+
+            <img
+                src="images/news-frame.jpg"
+                alt="Công nghệ khung sườn Giant"
+                onerror="this.src='images/vibe-1.jpg'"
+            >
+
+            <span class="featured-label">
+                NỔI BẬT
+            </span>
+
+        </div>
+
+        <div class="featured-content">
+
+            <span class="news-category">
+                CÔNG NGHỆ
+            </span>
+
+            <h2>
+                HÀNH TRÌNH TIÊN PHONG
+                CÔNG NGHỆ KHUNG SƯỜN GIANT
+            </h2>
+
+            <div class="news-date">
+                📅 16/07/2026
+            </div>
+
+            <p>
+                Khám phá cách Giant nghiên cứu vật liệu,
+                tối ưu trọng lượng và thiết kế khung xe nhằm
+                mang đến độ bền, khả năng kiểm soát và hiệu suất
+                phù hợp cho từng nhu cầu sử dụng.
+            </p>
+
+            <button
+                type="button"
+                class="read-more"
+                onclick="openNewsDetail(1)"
+            >
+                ĐỌC TIẾP →
+            </button>
+
+        </div>
+
+    </article>
+
+    <!-- 3 BÀI NHỎ -->
+    <section class="news-grid">
+
+        <article class="news-card">
+
+            <div class="news-card-image">
+
+                <img
+                    src="images/news-tcr.jpg"
+                    alt="Giant TCR Advanced Pro"
+                    onerror="this.src='images/bike-14.jpg'"
+                >
+
+                <span class="news-card-category">
+                    SẢN PHẨM
+                </span>
+
+            </div>
+
+            <div class="news-card-content">
+
+                <div class="news-date">
+                    📅 15/07/2026
+                </div>
+
+                <h3>
+                    GIANT TCR ADVANCED PRO:
+                    HIỆU SUẤT DÀNH CHO ĐƯỜNG ĐUA
+                </h3>
+
+                <p>
+                    Thiết kế khung carbon nhẹ, khả năng tăng tốc
+                    tốt và tư thế vận hành tối ưu dành cho người
+                    đam mê tốc độ.
+                </p>
+
+                <button
+                    type="button"
+                    class="card-read-more"
+                    onclick="openNewsDetail(2)"
+                >
+                    XEM CHI TIẾT
+                </button>
+
+            </div>
+
+        </article>
+
+        <article class="news-card">
+
+            <div class="news-card-image">
+
+                <img
+                    src="images/news-choose-bike.jpg"
+                    alt="Chọn xe đạp Giant"
+                    onerror="this.src='images/vibe-2.jpg'"
+                >
+
+                <span class="news-card-category">
+                    KINH NGHIỆM
+                </span>
+
+            </div>
+
+            <div class="news-card-content">
+
+                <div class="news-date">
+                    📅 14/07/2026
+                </div>
+
+                <h3>
+                    CÁCH CHỌN XE ĐẠP GIANT
+                    PHÙ HỢP CHO NGƯỜI MỚI
+                </h3>
+
+                <p>
+                    Phân biệt Touring, MTB, Road và Hybrid để
+                    lựa chọn đúng mẫu xe theo địa hình,
+                    nhu cầu và thói quen sử dụng.
+                </p>
+
+                <button
+                    type="button"
+                    class="card-read-more"
+                    onclick="openNewsDetail(3)"
+                >
+                    XEM CHI TIẾT
+                </button>
+
+            </div>
+
+        </article>
+
+        <article class="news-card">
+
+            <div class="news-card-image">
+
+                <img
+                    src="images/news-maintenance.jpg"
+                    alt="Bảo dưỡng xe đạp Giant"
+                    onerror="this.src='images/vibe-3.jpg'"
+                >
+
+                <span class="news-card-category">
+                    BẢO DƯỠNG
+                </span>
+
+            </div>
+
+            <div class="news-card-content">
+
+                <div class="news-date">
+                    📅 13/07/2026
+                </div>
+
+                <h3>
+                    5 MẸO GIÚP XE ĐẠP GIANT
+                    LUÔN BỀN ĐẸP
+                </h3>
+
+                <p>
+                    Kiểm tra lốp, vệ sinh bộ truyền động,
+                    theo dõi hệ thống phanh và bảo dưỡng
+                    định kỳ để xe luôn vận hành ổn định.
+                </p>
+
+                <button
+                    type="button"
+                    class="card-read-more"
+                    onclick="openNewsDetail(4)"
+                >
+                    XEM CHI TIẾT
+                </button>
+
+            </div>
+
+        </article>
+
+    </section>
+
+</main>
+
+<!-- POPUP CHI TIẾT -->
+<div
+    id="newsModal"
+    class="news-modal"
+    onclick="closeModalOutside(event)"
+>
+
+    <article class="news-modal-content">
+
+        <button
+            type="button"
+            class="news-modal-close"
+            onclick="closeNewsDetail()"
+        >
+            ×
+        </button>
+
+        <div id="newsDetailContent"></div>
+
+    </article>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+
+    <div class="footer-left">
+
+        <p>
+            <b>Công Ty Cổ Phần Vòng Xanh</b>
+        </p>
+
+        <p>
+            GPKD 0313891315 do Sở KH&amp;ĐT TP.HCM
+            cấp ngày 17/06/2025
+        </p>
+
+        <p>
+            100 Hải Thượng Lãn Ông,
+            Phường Chợ Lớn, TP.HCM
+        </p>
+
+        <p>Email: Info@giant.vn</p>
+
+    </div>
+
+    <div class="footer-right">
+
+        <p>
+            Giới thiệu | Tin tức | Bảo hành |
+            Liên hệ | Điều khoản &amp; Bảo mật
+        </p>
+
+        <p>
+            Copyright 2018 © Giant International
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="news.js"></script>
+
+</body>
+</html>

@@ -987,9 +987,13 @@ function toggleSearch(){
 }
 window.addEventListener("load", function () {
 
-    addCart("Giant Escape 1 Disc");
-    addCart("Giant Escape 2 Disc");
+    compare = [
+        bikes[0],
+        bikes[1]
+    ];
 
-    openCart();
+    renderCompare();
+
+    compareBox.style.display = "block";
 
 });

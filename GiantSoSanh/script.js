@@ -985,15 +985,3 @@ function toggleSearch(){
     }
 
 }
-window.addEventListener("load", function () {
-
-    compare = [
-        bikes[0],
-        bikes[1]
-    ];
-
-    renderCompare();
-
-    compareBox.style.display = "block";
-
-});

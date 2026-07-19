@@ -1,19 +1,18 @@
-const user = JSON.parse(localStorage.getItem("currentUser"));
-
-if (!user) {
-
-    window.location = "login.html";
-
+// Chỉ tạo tài khoản demo khi chưa có currentUser
+if (!localStorage.getItem("currentUser")) {
+    localStorage.setItem("currentUser", JSON.stringify({
+        name: "Demo User",
+        email: "demo@gmail.com"
+    }));
 }
 
-document.getElementById("userName").innerHTML = user.name;
+const user = JSON.parse(localStorage.getItem("currentUser"));
 
+document.getElementById("userName").innerHTML = user.name;
 document.getElementById("userEmail").innerHTML = user.email;
 
 document.getElementById("profileName").value = user.name;
-
 document.getElementById("profileEmail").value = user.email;
-
 function saveProfile(){
 
     user.name=document.getElementById("profileName").value;

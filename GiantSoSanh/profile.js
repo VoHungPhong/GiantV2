@@ -356,3 +356,6 @@ function changePassword() {
 
     alert("Đổi mật khẩu thành công.");
 }
+window.onload = function () {
+    showProfileSection("favorites");
+};

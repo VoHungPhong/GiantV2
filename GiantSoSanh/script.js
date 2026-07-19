@@ -985,3 +985,11 @@ function toggleSearch(){
     }
 
 }
+window.addEventListener("load", function () {
+
+    addCart("Giant Escape 1 Disc");
+    addCart("Giant Escape 2 Disc");
+
+    openCart();
+
+});

@@ -202,37 +202,12 @@ function removeFavorite(id) {
 /* Khởi tạo số lượng yêu thích */
 updateFavoriteCount();
 /* =========================
-   ĐƠN HÀNG DEMO
+/* =========================
+   ĐƠN HÀNG
 ========================= */
 
-const demoOrders = [
-    {
-        code: "DH001",
-        bikeId: 1,
-        name: "Giant Escape 1 Disc",
-        price: "17.990.000đ",
-        date: "15/07/2026",
-        status: "Đã giao",
-        statusClass: "completed"
-    },
-    {
-        code: "DH002",
-        bikeId: 7,
-        name: "Giant Talon 3 (27.5)",
-        price: "13.590.000đ",
-        date: "18/07/2026",
-        status: "Đang giao",
-        statusClass: "shipping"
-    }
-];
-
 function getOrders() {
-    const savedOrders =
-        JSON.parse(localStorage.getItem("orders")) || [];
-
-    return savedOrders.length > 0
-        ? savedOrders
-        : demoOrders;
+    return JSON.parse(localStorage.getItem("orders")) || [];
 }
 
 function renderOrders() {
@@ -253,45 +228,70 @@ function renderOrders() {
         return;
     }
 
-    orderList.innerHTML = orders.map(order => `
-        <article class="order-card">
+    orderList.innerHTML = orders.map(order => {
+        const product = order.products?.[0];
 
-            <div class="order-header">
+        const orderDate = order.createdAt
+            ? new Date(order.createdAt).toLocaleString("vi-VN")
+            : "Chưa xác định";
 
-                <span class="order-code">
-                    Đơn hàng #${order.code}
-                </span>
+        const total = Number(order.total || 0)
+            .toLocaleString("vi-VN") + "₫";
 
-                <span class="order-status ${order.statusClass}">
-                    ${order.status}
-                </span>
+        const otherProducts =
+            order.products?.length > 1
+                ? ` và ${order.products.length - 1} sản phẩm khác`
+                : "";
 
-            </div>
+        return `
+            <article class="order-card">
 
-            <div class="order-product">
+                <div class="order-header">
 
-                <img
-                    src="images/bike-${order.bikeId}.jpg"
-                    alt="${order.name}"
-                    onerror="this.src='images/no-image.jpg'"
-                >
+                    <span class="order-code">
+                        Đơn hàng #${order.id || "Chưa xác định"}
+                    </span>
 
-                <div>
-                    <h3>${order.name}</h3>
+                    <span class="order-status">
+                        ${order.status || "Đang lấy hàng"}
+                    </span>
 
-                    <p>
-                        Ngày đặt: ${order.date}
-                    </p>
-
-                    <p class="order-price">
-                        ${order.price}
-                    </p>
                 </div>
 
-            </div>
+                <div class="order-product">
 
-        </article>
-    `).join("");
+                    <img
+                        src="images/bike-${product?.id || 1}.jpg"
+                        alt="${product?.name || "Sản phẩm"}"
+                        onerror="this.src='images/no-image.jpg'">
+
+                    <div>
+
+                        <h3>
+                            ${product?.name || "Sản phẩm không xác định"}
+                            ${otherProducts}
+                        </h3>
+
+                        <p>
+                            Ngày đặt: ${orderDate}
+                        </p>
+
+                        <p class="order-price">
+                            ${total}
+                        </p>
+
+                        <p>
+                            Thanh toán:
+                            ${order.paymentMethod || "Chưa xác định"}
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+        `;
+    }).join("");
 }
 /* =========================
    ĐỔI MẬT KHẨU

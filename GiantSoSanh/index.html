@@ -116,11 +116,268 @@
       Tổng tiền: <span id="cartTotal">0₫</span>
     </div>
 
-    <button class="btn buy" onclick="checkout()">Thanh toán</button>
+    <button class="btn buy" onclick="openCheckout()">
+    Thanh toán
+</button>
     <button class="btn compare" onclick="closeCart()">Đóng</button>
   </div>
 </div>
 
+<!-- CHECKOUT MODAL -->
+<div id="checkoutModal" class="checkout-modal">
+
+    <div class="checkout-overlay" onclick="closeCheckout()"></div>
+
+    <div class="checkout-box">
+
+        <button
+            type="button"
+            class="checkout-close"
+            onclick="closeCheckout()">
+            ×
+        </button>
+
+        <div class="checkout-heading">
+            <div class="checkout-icon">🛍️</div>
+
+            <div>
+                <h2>Thông tin thanh toán</h2>
+                <p>Vui lòng kiểm tra thông tin trước khi hoàn thành đơn hàng.</p>
+            </div>
+        </div>
+
+        <div class="checkout-layout">
+
+            <!-- THÔNG TIN NHẬN HÀNG -->
+            <div class="checkout-form-section">
+
+                <h3>Thông tin người nhận</h3>
+
+                <div class="checkout-grid">
+
+                    <div class="checkout-field">
+                        <label for="checkoutName">Họ và tên</label>
+
+                        <input
+                            id="checkoutName"
+                            type="text"
+                            placeholder="Nhập họ và tên">
+                    </div>
+
+                    <div class="checkout-field">
+                        <label for="checkoutEmail">Email</label>
+
+                        <input
+                            id="checkoutEmail"
+                            type="email"
+                            placeholder="Nhập email">
+                    </div>
+
+                    <div class="checkout-field checkout-full">
+                        <label for="checkoutPhone">Số điện thoại</label>
+
+                        <input
+                            id="checkoutPhone"
+                            type="tel"
+                            placeholder="Ví dụ: 0901234567">
+                    </div>
+
+                </div>
+
+                <h3>Địa chỉ giao hàng</h3>
+
+                <div class="checkout-grid">
+
+                    <div class="checkout-field">
+                        <label for="checkoutStreet">Số nhà và tên đường</label>
+
+                        <input
+                            id="checkoutStreet"
+                            type="text"
+                            placeholder="Ví dụ: 100 Hải Thượng Lãn Ông">
+                    </div>
+
+                    <div class="checkout-field">
+                        <label for="checkoutDistrict">Quận / Huyện</label>
+
+                        <input
+                            id="checkoutDistrict"
+                            type="text"
+                            placeholder="Ví dụ: Quận 5">
+                    </div>
+
+                    <div class="checkout-field checkout-full">
+                        <label for="checkoutNote">Ghi chú đơn hàng</label>
+
+                        <textarea
+                            id="checkoutNote"
+                            rows="4"
+                            placeholder="Thời gian nhận hàng hoặc yêu cầu khác..."></textarea>
+                    </div>
+
+                </div>
+
+                <h3>Phương thức thanh toán</h3>
+
+                <div class="payment-options">
+
+                    <label class="payment-card active">
+
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="cod"
+                            checked
+                            onchange="changePaymentMethod()">
+
+                        <div class="payment-card-icon">💵</div>
+
+                        <div>
+                            <strong>Thanh toán khi nhận hàng</strong>
+                            <span>Thanh toán bằng tiền mặt khi nhận xe.</span>
+                        </div>
+
+                    </label>
+
+                    <label class="payment-card">
+
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="qr"
+                            onchange="changePaymentMethod()">
+
+                        <div class="payment-card-icon">📱</div>
+
+                        <div>
+                            <strong>Chuyển khoản qua mã QR</strong>
+                            <span>Quét mã QR để thực hiện thanh toán.</span>
+                        </div>
+
+                    </label>
+
+                </div>
+
+                <div id="qrPaymentBox" class="qr-payment-box">
+
+                    <div class="qr-title">
+                        Quét mã để chuyển khoản
+                    </div>
+
+                    <img
+                        src="images/QR.jpg"
+                        alt="Mã QR thanh toán"
+                        onerror="this.src='images/no-image.jpg'">
+
+                    <p>
+                        Vui lòng ghi nội dung chuyển khoản:
+                        <strong id="qrTransferContent">GIANT ORDER</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- TÓM TẮT ĐƠN HÀNG -->
+            <aside class="checkout-summary">
+
+                <h3>Đơn hàng của bạn</h3>
+
+                <div id="checkoutProducts"></div>
+
+                <div class="checkout-money-row">
+                    <span>Tạm tính</span>
+                    <strong id="checkoutSubtotal">0₫</strong>
+                </div>
+
+                <div class="checkout-money-row">
+                    <span>Phí giao hàng</span>
+                    <strong>Miễn phí</strong>
+                </div>
+
+                <div class="checkout-total-row">
+                    <span>Thành tiền</span>
+                    <strong id="checkoutTotal">0₫</strong>
+                </div>
+
+                <button
+                    class="checkout-submit"
+                    onclick="completeOrder()">
+                    Hoàn thành đặt hàng
+                </button>
+
+                <button
+                    class="checkout-back"
+                    onclick="closeCheckout()">
+                    Quay lại giỏ hàng
+                </button>
+
+                <div class="checkout-secure">
+                    🔒 Thông tin đơn hàng được lưu an toàn trên trình duyệt.
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ORDER SUCCESS MODAL -->
+<div id="orderSuccessModal" class="order-success-modal">
+
+    <div class="order-success-box">
+
+        <div class="success-check">✓</div>
+
+        <h2>Đặt hàng thành công!</h2>
+
+        <p>
+            Cảm ơn bạn đã đặt mua xe tại GIANT.
+        </p>
+
+        <div class="success-order-code">
+            Mã đơn:
+            <strong id="successOrderCode"></strong>
+        </div>
+
+        <div class="order-progress">
+
+            <div class="progress-item active">
+                <div class="progress-icon">📦</div>
+                <span>Đang lấy hàng</span>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-item">
+                <div class="progress-icon">🚚</div>
+                <span>Đang giao hàng</span>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-item">
+                <div class="progress-icon">✓</div>
+                <span>Đã giao hàng</span>
+            </div>
+
+        </div>
+
+        <button onclick="goToOrders()">
+            Xem đơn hàng
+        </button>
+
+        <button
+            class="success-home-btn"
+            onclick="closeOrderSuccess()">
+            Tiếp tục mua sắm
+        </button>
+
+    </div>
+
+</div>
 
 <div class="container">
 <section class="slideshow">
